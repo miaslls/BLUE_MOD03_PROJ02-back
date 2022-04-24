@@ -1,0 +1,23 @@
+[
+  {
+    "mood_id": 0,
+    "icon": "",
+    "text": "text mood 0",
+    "dateTime": "2022-04-14T00:00:00",
+    "createdat": "20220414000000"
+  },
+  {
+    "mood_id": 1,
+    "icon": "",
+    "text": "text mood 1",
+    "dateTime": "2022-04-23T00:00:01",
+    "createdat": "20220423000001"
+  },
+  {
+    "mood_id": 2,
+    "icon": "",
+    "text": "text mood 2",
+    "dateTime": "2022-04-23T00:00:02",
+    "createdat": "20220423000002"
+  }
+]

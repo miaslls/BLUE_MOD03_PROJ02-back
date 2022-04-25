@@ -16,7 +16,6 @@ const getTodayMoodsService = async () => {
   const todayMoods = await Mood.find();
   const dateToday = getDateToday();
   const todayMoodList = [];
-
   const moods = formatMoods(todayMoods);
 
   for (let mood of moods) {
@@ -29,4 +28,15 @@ const getTodayMoodsService = async () => {
   return todayMoodList;
 };
 
-module.exports = { getAllMoodsService, getTodayMoodsService };
+const getMoodByIdService = async (id) => {
+  const moodById = await Mood.findById(id);
+
+  if (!moodById) {
+    return null;
+  }
+
+  const mood = formatMood(moodById);
+  return mood;
+};
+
+module.exports = { getAllMoodsService, getTodayMoodsService, getMoodByIdService };

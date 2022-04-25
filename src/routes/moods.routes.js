@@ -11,6 +11,6 @@ router.get('/:id', moodsController.getMoodByIdController);
 
 router.post('/add', moodsController.addMoodController);
 router.put('/update/:id', moodsController.updateMoodController);
-// router.delete('/delete/:createdat', moodsController.deleteMoodController);
+router.delete('/delete/:id', moodsController.deleteMoodController);
 
 module.exports = router;

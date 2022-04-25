@@ -49,10 +49,16 @@ const updateMoodService = async (id, moodBody) => {
   return updatedMood;
 };
 
+const deleteMoodService = async (id) => {
+  const deletedMood = await Paleta.findByIdAndDelete(id);
+  return deletedMood;
+};
+
 module.exports = {
   getAllMoodsService,
   getTodayMoodsService,
   getMoodByIdService,
   addMoodService,
   updateMoodService,
+  deleteMoodService,
 };

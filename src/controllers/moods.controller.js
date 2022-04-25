@@ -72,7 +72,28 @@ const updateMoodController = async (req, res) => {
   if (!updatedMood) {
     return res.status(404).send({ message: 'mood NOT FOUND', icon: '' });
   }
+
   res.status(200).send({ message: 'mood UPDATED', icon: '' });
+};
+
+// 📌 DELETE
+
+const deleteMoodController = async (req, res) => {
+  const idParam = req.params.id;
+
+  if (!mongoose.Types.ObjectId.isValid(idParam)) {
+    res.status(400).send({ message: 'invalid ID', icon: '' });
+    return;
+  }
+
+  const deletedMood = await moodsService.getMoodByIdService(idParam);
+
+  if (!deletedMood) {
+    res.status(404).send({ message: 'mood NOT FOUND', icon: '' });
+    return;
+  }
+
+  res.status(200).send({ message: 'mood DESTROYED', icon: '' });
 };
 
 module.exports = {
@@ -81,4 +102,5 @@ module.exports = {
   getMoodByIdController,
   addMoodController,
   updateMoodController,
+  deleteMoodController,
 };

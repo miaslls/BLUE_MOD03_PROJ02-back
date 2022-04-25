@@ -9,10 +9,10 @@ Backend CRUD MongoDB + Front Vanilla (Create, Update, Delete)Critérios de Avali
 ### Endpoints (2 pontos)
 
 - [GET] Leitura de todas as paletas (0,4 pontos); ✔
-- [GET] Leitura de paletas individuais (por ID) (0,4 pontos).
-- [POST] Criação de paletas (0,4 pontos);
-- [PUT] Edição de paletas por ID (0,4 pontos);
-- [DELETE] Exclusão de paletas por ID (0,4 pontos).
+- [GET] Leitura de paletas individuais (por ID) (0,4 pontos). ✔
+- [POST] Criação de paletas (0,4 pontos); ✔
+- [PUT] Edição de paletas por ID (0,4 pontos); ✔
+- [DELETE] Exclusão de paletas por ID (0,4 pontos). ✔
 
 ### Requisitos (8 pontos)
 

@@ -39,4 +39,9 @@ const getMoodByIdService = async (id) => {
   return mood;
 };
 
-module.exports = { getAllMoodsService, getTodayMoodsService, getMoodByIdService };
+const addMoodService = async (newMood) => {
+  const addedMood = await Mood.create(newMood);
+  return addedMood;
+};
+
+module.exports = { getAllMoodsService, getTodayMoodsService, getMoodByIdService, addMoodService };

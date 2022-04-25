@@ -1,16 +1,23 @@
 'use strict';
 
 const moodsService = require('../services/moods.service');
+const validateInput = require('../util/validateInput');
+
+// 📌 get ALL
 
 const getAllMoodsController = async (req, res) => {
   const allMoods = await moodsService.getAllMoodsService();
   res.send(allMoods);
 };
 
+// 📌 get TODAY
+
 const getTodayMoodsController = async (req, res) => {
   const todayMoods = await moodsService.getTodayMoodsService();
   res.send(todayMoods);
 };
+
+// 📌 get BY ID
 
 const getMoodByIdController = async (req, res) => {
   const idParam = req.params.id;
@@ -29,4 +36,22 @@ const getMoodByIdController = async (req, res) => {
   res.send(chosenMood);
 };
 
-module.exports = { getAllMoodsController, getTodayMoodsController, getMoodByIdController };
+// 📌 ADD
+
+const addMoodController = async (req, res) => {
+  const moodBody = req.body;
+  const validMood = validateInput(moodBody);
+  if (!validMood) {
+    return res.status(400).send({ message: 'mood INVALID', icon: '' });
+  }
+
+  const newMood = await moodsService.addMoodService(moodBody);
+  res.status(201).send({ message: 'mood CREATED', icon: '' });
+};
+
+module.exports = {
+  getAllMoodsController,
+  getTodayMoodsController,
+  getMoodByIdController,
+  addMoodController,
+};

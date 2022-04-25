@@ -44,4 +44,15 @@ const addMoodService = async (newMood) => {
   return addedMood;
 };
 
-module.exports = { getAllMoodsService, getTodayMoodsService, getMoodByIdService, addMoodService };
+const updateMoodService = async (id, moodBody) => {
+  const updatedMood = await Mood.findByIdAndUpdate(id, moodBody);
+  return updatedMood;
+};
+
+module.exports = {
+  getAllMoodsService,
+  getTodayMoodsService,
+  getMoodByIdService,
+  addMoodService,
+  updateMoodService,
+};

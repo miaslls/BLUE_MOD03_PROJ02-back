@@ -10,7 +10,7 @@ router.get('/today', moodsController.getTodayMoodsController);
 router.get('/:id', moodsController.getMoodByIdController);
 
 router.post('/add', moodsController.addMoodController);
-// router.put('/update/:createdat', moodsController.updateMoodController);
+router.put('/update/:id', moodsController.updateMoodController);
 // router.delete('/delete/:createdat', moodsController.deleteMoodController);
 
 module.exports = router;

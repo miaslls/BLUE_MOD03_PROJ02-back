@@ -17,7 +17,7 @@ const formatMoods = (moodList) => {
     const formattedMood = formatMood(mood);
     formattedMoodList.push(formattedMood);
   }
-  console.log(formattedMoodList); //🐞
+
   return formattedMoodList;
 };
 

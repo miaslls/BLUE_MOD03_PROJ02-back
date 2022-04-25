@@ -7,14 +7,9 @@ const getAllMoodsController = async (req, res) => {
   res.send(allMoods);
 };
 
-// const findPaletasController = async (req, res) => {
-//     const allPaletas = await paletasService.findPaletasService();
-//     res.send(allPaletas);
-//   };
+const getTodayMoodsController = async (req, res) => {
+  const todayMoods = await moodsService.getTodayMoodsService();
+  res.send(todayMoods);
+};
 
-//   const getAllMoodsController = (req, res) => {
-//     const allMoods = moodsService.getAllMoodsService();
-//     res.send(allMoods);
-//   };
-
-module.exports = { getAllMoodsController };
+module.exports = { getAllMoodsController, getTodayMoodsController };

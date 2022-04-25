@@ -1,21 +1,32 @@
 'use strict';
 
 const Mood = require('../models/Mood');
+const { formatMood, formatMoods } = require('../util/formatMoods');
+const sortMoods = require('../util/sortMoods');
+const getDateToday = require('../util/getDateToday');
 
 const getAllMoodsService = async () => {
-  const moods = await Mood.find();
+  const allMoods = await Mood.find();
+  const moods = formatMoods(allMoods);
+  sortMoods(moods);
   return moods;
 };
 
-// const findPaletasService = async () => {
-//     const paletas = await Paleta.find();
-//     return paletas;
-//   };
+const getTodayMoodsService = async () => {
+  const todayMoods = await Mood.find();
+  const dateToday = getDateToday();
+  const todayMoodList = [];
 
-// const getAllMoodsService = () => {
-//     formatMoods(moods);
-//     sortMoods(moods);
-//     return moods;
-//   };
+  const moods = formatMoods(todayMoods);
 
-module.exports = { getAllMoodsService };
+  for (let mood of moods) {
+    if (mood.formattedDateBody === dateToday) {
+      todayMoodList.push(mood);
+    }
+  }
+
+  sortMoods(todayMoodList);
+  return todayMoodList;
+};
+
+module.exports = { getAllMoodsService, getTodayMoodsService };

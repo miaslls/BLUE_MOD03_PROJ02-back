@@ -50,7 +50,7 @@ const updateMoodService = async (id, moodBody) => {
 };
 
 const deleteMoodService = async (id) => {
-  const deletedMood = await Paleta.findByIdAndDelete(id);
+  const deletedMood = await Mood.findByIdAndDelete(id);
   return deletedMood;
 };
 

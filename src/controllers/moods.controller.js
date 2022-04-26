@@ -65,6 +65,8 @@ const deleteMoodController = async (req, res) => {
     return;
   }
 
+  await moodsService.deleteMoodService(idParam);
+
   res.status(200).send({ message: 'mood DESTROYED', icon: '' });
 };
 

@@ -17,15 +17,15 @@ Backend CRUD MongoDB + Front Vanilla (Create, Update, Delete)Critérios de Avali
 ### Requisitos (8 pontos)
 
 - Padrão MVC aplicado corretamente (0,5 ponto); ✔
-- Integração back-end com o front-end (1 pontos);
+- Integração back-end com o front-end (1 pontos); ✔
 - Persistência de dados no MongoDB (2 pontos); ✔
 - Formatação do código utilizando o Prettier (0,5 ponto); ✔
 - CORS - Liberado (1 pontos). ✔
 
 ### Frontend Vanilla com os recursos:
 
-- Read All (0,6 pontos);
-- Read By Id (0,6 pontos);
-- Create (0,6 pontos);
-- Update (0,6 pontos);
-- Delete (0,6 pontos).
+- Read All (0,6 pontos); ✔
+- Read By Id (0,6 pontos); ✔
+- Create (0,6 pontos); ✔
+- Update (0,6 pontos); ✔
+- Delete (0,6 pontos). ✔
